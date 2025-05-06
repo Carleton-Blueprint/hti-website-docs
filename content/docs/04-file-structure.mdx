@@ -1,0 +1,39 @@
+---
+title: "📁 File Structure Overview"
+description: "This document explains the organization of the **HealthTech Innovators website** project. The structure supports both frontend routes, CMS integration (Contentful), and the documentation site (Fuma Docs)."
+icon: "📁"
+order: 4
+---
+
+
+## 🧭 Project Root
+
+```txt
+/
+├── app/                    # Next.js App Router (main pages & routes)
+│   ├── about-us/           # About page
+│   ├── news-blog/          # Blog listing + post pages
+│   ├── previous-events/    # Past event archive
+│   ├── resource/           # Resource hub (tips, research, etc.)
+│   ├── sign-up/            # Signup form or embed
+│   ├── team/               # Team page
+│   ├── test/               # Test pages or utilities
+│   ├── upcoming-events/    # Upcoming event pages
+│   ├── components/         # Local UI components for app pages
+│   ├── event-test.tsx      # Event route testing
+│   ├── layout.tsx          # App-wide layout wrapper
+│   ├── not-found.tsx       # Custom 404 page
+│   ├── page.tsx            # Home page (index)
+│   └── providers.tsx       # Global Mantine + theme providers
+│
+├── content/                # MDX-based documentation content (Fuma Docs)
+│   └── docs/               # Actual doc pages (index.mdx, etc.)
+│
+├── public/                 # Static assets (images, favicons, logos)
+│
+├── globals.css             # Tailwind base styles
+├── next.config.js          # Next.js project configuration
+├── tailwind.config.ts      # Tailwind custom theme config
+├── tsconfig.json           # TypeScript configuration
+├── package.json            # Project metadata and dependencies
+└── README.md               # Overview and onboarding guide
