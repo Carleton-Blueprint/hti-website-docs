@@ -1,0 +1,37 @@
+---
+title: ✍️ Blog Post
+description: Content structure for individual blog articles displayed on the blog page.
+---
+
+This content type defines a blog article to be displayed on the blog page.
+
+---
+
+## Fields
+
+- **id** (`Text`)  
+  Unique identifier for the blog post.  
+  _Validation: must be unique._
+
+- **title** (`Text`)  
+  Title of the blog post.  
+  _Validation: must be unique._
+
+- **date** (`Date`)  
+  Publication date of the post.
+
+- **author** (`Text`)  
+  Author name (optional).
+
+- **category** (`Text`)  
+  Post category (optional).
+
+- **excerpt** (`Text`)  
+  Short preview or summary of the article content.
+
+- **content** (`RichText`)  
+  Main article body.  
+  _Validation: No marks or node types allowed (plain text only)._
+
+- **image** (`Asset Link`)  
+  Optional image associated with the blog post.
