@@ -1,0 +1,95 @@
+---
+title: 	📅 Upcoming Event
+description: Defines an event entry for the events page.
+---
+
+Each entry represents a future event featured on the events page.
+
+---
+
+## Fields
+
+- **id** (`text`)  
+  Identifier for the event. Must be unique.
+
+- **title** (`text`)  
+  Title of the event.
+
+- **date** (`date`)  
+  Date the event will occur.
+
+- **location** (`text`)  
+  Event venue or delivery format (e.g., "Online").
+
+- **category** (`text`)  
+  Thematic category or type of the event.
+
+- **capacity** (`number`)  
+  Maximum number of attendees allowed.
+
+- **registrationLink** (`text`)  
+  Optional URL to external registration page.
+
+- **description** (`rich text`)  
+  Short event summary.  
+  _Max: 120 characters. No marks or node types allowed._
+
+- **longDescription** (`rich text`)  
+  Optional detailed description of the event.  
+  _No marks or node types allowed._
+
+- **speakers** (`array<text>`)  
+  Optional list of featured speakers.
+
+- **isFeatured** (`boolean`)  
+  Whether this event should be promoted as a featured event.
+
+- **image** (`asset`)  
+  Required image representing the event.
+
+- **agenda** (`JSON`)  
+  Optional agenda object.  This is very important to format correctly. The agenda is a series of events, and is entered as a JSON on contentful. To have a valid agenda JSON object, the whole thing must be encased in [] (json array). Inside this you may add 2-10 agenda items. Each one must have only time, title, and description fields. The easiest way to to this would be to just copy and paste the example one we have added on contentful (or below) to your new event and edit it. Below is an example of how a valid entry with 2 agenda items looks:
+  ```
+  [
+    {
+        "time": "9:00 AM - 9:30 AM",
+        "title": "Registration and Breakfast",
+        "description": "Check-in and enjoy a light breakfast"
+    },
+    {
+        "time": "9:30 AM - 10:30 AM",
+        "title": "Keynote: The Future of Healthcare Technology",
+        "description": "Dr. Emily Chen discusses emerging trends and predictions for healthcare innovation"
+    }
+  ]
+  ```
+  _Must include at least 2 and no more than 10 items._
+
+- **requirements** (`array<text>`)  
+  Optional list of required items, qualifications, or actions.
+
+- **organizers** (`array<text>`)  
+  Optional list of organizers or affiliated groups.
+
+- **sponsors** (`array<text>`)  
+  Optional list of sponsors.
+
+- **faqs** (`JSON`)  
+  Optional FAQ object.  This is similar to the agenda item, in that it is formatted as a json array. With this, however, all you would need is a question and answer field within each FAQ object. See the example below for a valid one, or see the example entry on contentful:
+  ```
+  [
+    {
+        "answer": "Yes, all students are welcome to attend, regardless of program or field of study.",
+        "question": "Is this event open to all students?"
+    },
+    {
+        "answer": "No prior knowledge is required. This event is suitable for both beginners and those with experience in the field.",
+        "question": "Do I need prior knowledge of healthcare technology?"
+    },
+    {
+        "answer": "Yes, breakfast, lunch, and refreshments throughout the day are included with registration.",
+        "question": "Will food be provided?"
+    }
+  ]
+  ```
+  _Max: 10 entries. Must include both question and answer._
